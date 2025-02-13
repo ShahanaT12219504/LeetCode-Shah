@@ -11,11 +11,11 @@ class Solution {
             }
         }
          
-        int frequencyOfFirstElement =freq.get(s.charAt(0));
+        int count =freq.get(s.charAt(0));
 
       for (char key : freq.keySet()) {
          
-           if(freq.get(key)!=frequencyOfFirstElement){
+           if(freq.get(key)!=count){
                 return false;
            }
           
