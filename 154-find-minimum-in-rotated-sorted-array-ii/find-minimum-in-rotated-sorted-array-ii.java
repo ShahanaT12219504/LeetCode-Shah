@@ -1,0 +1,27 @@
+class Solution {
+    public int findMin(int[] nums) {
+        int low = 0;
+        int high=nums.length-1;
+        int res = Integer.MAX_VALUE;
+
+        while(low<=high){
+            int mid = low+(high-low)/2;
+
+            if(nums[low]==nums[mid] && nums[mid]==nums[high]){
+                res=Math.min(res,nums[low]);
+                low++;
+                high--;
+            }
+            //to check if left half is sorted
+            else if(nums[low] <= nums[mid]){
+                res = Math.min(res,nums[low]);;
+                low  = mid+1;
+            }
+
+            else{
+                res = Math.min(res,nums[mid]);
+                high = mid-1;
+            }
+        } return res;
+    }
+}
